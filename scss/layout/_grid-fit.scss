@@ -1,0 +1,21 @@
+@use '../abstracts' as *;
+
+.grid-fit-auto,
+.grid-fit-2fr,
+.grid-fit-3fr {
+  display: grid;
+  gap: var(--grid-gap, $grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+}
+
+.grid-fit-3fr {
+  @include mq($desktop) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.grid-fit-2fr {
+  @include mq($desktop) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

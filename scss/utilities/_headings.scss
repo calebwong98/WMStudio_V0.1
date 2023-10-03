@@ -1,0 +1,24 @@
+@use '../abstracts' as *;
+
+.heading-1 {
+  @include heading($heading-font-size-1, $heading-color-1);
+}
+.heading-2 {
+  @include heading($heading-font-size-2, $heading-color-2);
+}
+.heading-3 {
+  @include heading($heading-font-size-3, $heading-color-3);
+}
+
+.heading-1,
+.heading-2,
+.heading-3 {
+  height: fit-content;
+}
+.heading-1.subheading,
+.heading-2.subheading,
+.heading-3.subheading {
+  & + p {
+    margin-top: $subheading-margin-top;
+  }
+}

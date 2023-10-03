@@ -1,0 +1,287 @@
+@use 'colors' as *;
+@use 'typography' as *;
+@use 'sizes' as *;
+@use 'boxshadow' as *;
+
+// ############################################################### //
+// -------------------GLOBAL CONTEXTUAL TOKENS-------------------- //
+// $prefix: 'cw-';
+
+$active-theme: $light;
+$compile-dark-mode: false;
+
+// _typography
+$font-family-base: $ff-sans;
+$font-family-accent: $ff-serif;
+
+$font-size-300: $fs-300;
+$font-size-400: $fs-400; // Default
+$font-size-500: $fs-500;
+$font-size-600: $fs-600; // Heading
+$font-size-700: $fs-700;
+$font-size-800: $fs-800;
+$font-size-900: $fs-900; // Hero
+
+$font-weight-default: $fw-400;
+$font-weight-semi-bold: $fw-500;
+$font-weight-bold: $fw-700;
+
+// _colors
+$color-neutral-000: $clr-neu-000;
+$color-neutral-100: $clr-neu-100;
+$color-neutral-200: $clr-neu-200;
+$color-neutral-300: $clr-neu-300;
+$color-neutral-400: $clr-neu-400;
+$color-neutral-500: $clr-neu-500;
+$color-neutral-600: $clr-neu-600;
+$color-neutral-700: $clr-neu-700;
+$color-neutral-800: $clr-neu-800;
+$color-neutral-900: $clr-neu-900;
+$color-neutral-1000: $clr-neu-1000;
+
+$color-primary-100: $clr-prm-100;
+$color-primary-200: $clr-prm-200;
+$color-primary-300: $clr-prm-300;
+$color-primary-400: $clr-prm-400;
+$color-primary-500: $clr-prm-500;
+$color-primary-600: $clr-prm-600;
+$color-primary-700: $clr-prm-700;
+$color-primary-800: $clr-prm-800;
+$color-primary-900: $clr-prm-900;
+
+$color-accent-100: $clr-acc-100;
+$color-accent-200: $clr-acc-200;
+$color-accent-300: $clr-acc-300;
+$color-accent-400: $clr-acc-400;
+$color-accent-500: $clr-acc-500;
+$color-accent-600: $clr-acc-600;
+$color-accent-700: $clr-acc-700;
+$color-accent-800: $clr-acc-800;
+$color-accent-900: $clr-acc-900;
+
+$color-text-default: $color-primary-800;
+$color-text-alternate: $color-primary-100;
+$color-background-default: $color-primary-100;
+$color-background-alternate: $color-primary-200;
+
+$color-accent-primary: $color-accent-400;
+
+$color-text-interactive-default: $color-primary-100;
+$color-text-interactive-hover: $color-accent-300;
+
+// _sizes
+$size-1: $sz-1; // rem,
+$size-2: $sz-2; // rem,
+$size-3: $sz-3; // rem,
+$size-4: $sz-4; // rem,
+$size-5: $sz-5; // rem,
+$size-6: $sz-6; // rem,
+$size-7: $sz-7; // rem,
+$size-8: $sz-8; // rem,
+$size-9: $sz-9; // rem,
+$size-10: $sz-10; // rem,
+$size-11: $sz-11; // rem,
+$size-12: $sz-12; // rem,
+$size-13: $sz-13; // rem,
+$size-14: $sz-14; // rem,
+$size-15: $sz-15; // rem,
+
+// .spacing
+$letter-spacing-loose: 0.16em;
+$padding-block-default: $size-8;
+$gap-default: $size-8;
+
+// .borderradius
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+$border-radius-3: $size-4;
+$border-radius-4: $size-4;
+$border-radius-5: $size-4;
+
+// _boxshadow
+$box-shadow-1: $bs-1;
+$box-shadow-2: $bs-2;
+$box-shadow-3: $bs-3;
+$box-shadow-4: $bs-4;
+$box-shadow-5: $bs-5;
+
+// .breakpoints
+$tablet: small;
+$desktop: medium;
+
+// ############################################################### //
+// ------------------COMPONENT CONTEXTUAL TOKENS------------------ //
+
+// ___________________________ BASE ______________________________ //
+
+// _general / body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-font-weight: $font-weight-default;
+
+$body-color-default: $color-text-default;
+$body-background-color: $color-background-default;
+$body-line-height: 1.5;
+
+// _general / a
+$link-color: $color-text-interactive-default;
+$link-color-hover: $color-text-interactive-hover;
+
+// _mixins / heading($fs, $color: $heading-color-default)
+$heading-font-family: $font-family-accent;
+$heading-font-size-1: $font-size-900;
+$heading-font-size-2: $font-size-800;
+$heading-font-size-3: $font-size-700;
+$heading-font-weight: $font-weight-bold;
+
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1;
+$heading-text-transform: uppercase;
+
+$heading-color-default: $color-text-alternate;
+$heading-color-1: $color-accent-primary;
+$heading-color-2: $color-accent-400;
+$heading-color-3: $color-primary-400;
+
+$subheading-margin-top: $size-4;
+
+// __________________________ LAYOUT _____________________________ //
+
+// _container / .container
+$container-min-margin-inline: $size-8;
+$container-max-width: 60rem;
+$container-max-width-narrow: 40rem;
+$container-max-width-wide: 75rem;
+
+// _even-columns / .even-columns
+// _grid-fit / .grid-fit-auto
+// _grid-fit / .grid-fit-2fr
+// _grid-fit / .grid-fit-3fr
+$grid-gap: $gap-default;
+
+// _flex-group / .flex-group
+$flex-group-gap: $gap-default;
+
+// _flow / .flow
+$flow-gap: $gap-default;
+
+// _section / .section
+$section-padding-block: $size-13;
+$hero-padding-block: $section-padding-block;
+
+$section-gap: $size-12;
+
+$section-justification: space-between;
+$section-align-items: center;
+$section-text-align: center;
+
+$section-background-color-alternate: $color-background-alternate;
+
+// __________________________ UTILITY ____________________________ //
+
+//
+
+// _________________________ COMPONENTS __________________________ //
+
+// BASIC COMPONENTS_______________________________________________
+
+// _buttons / .button
+$button-font-family: $font-family-base;
+$button-font-size: $body-font-size;
+$button-font-weight: $font-weight-bold;
+
+$button-width: fit-content;
+$button-padding-default: $size-3 $size-9;
+$button-text-transform: none;
+$button-border-default: 0;
+$button-border-radius: $border-radius-1;
+
+$button-transition: 0;
+
+$button-primary-color: $color-text-alternate;
+$button-primary-background: $color-primary-700;
+$button-primary-color-hover: $color-text-alternate;
+$button-primary-background-hover: $color-primary-800;
+
+$button-accent-color: $color-text-alternate;
+$button-accent-background: $color-accent-primary;
+$button-accent-color-hover: $color-text-alternate;
+$button-accent-background-hover: $color-accent-500;
+
+// _cards / .card
+$card-font-family: $font-family-base;
+
+$card-gap: $size-4;
+$card-padding: $size-8;
+$card-line-height: 1.25;
+$card-border-radius: $border-radius-2;
+
+$card-default-color: $body-color-default;
+$card-default-background: $body-background-color;
+$card-default-box-shadow: $box-shadow-1;
+
+$card-accent-color: $color-text-alternate;
+$card-accent-background: $color-accent-primary;
+$card-accent-box-shadow: $box-shadow-1;
+
+// _form / .contact-form
+$form-gap: $gap-default;
+$form-button-margin-top: $size-4;
+
+$form-label-font-family: $font-family-base;
+$form-label-font-size: $body-font-size;
+$form-label-font-weight: $font-weight-bold;
+$form-label-color: $body-color-default;
+
+$form-input-font-family: $body-font-family;
+$form-input-font-size: $body-font-size;
+$form-input-font-weight: $font-weight-semi-bold;
+$form-input-padding: $size-3;
+$form-input-border-radius: $border-radius-1;
+$form-input-border-default: 3px solid $color-background-alternate;
+$form-input-border-hover: 3px solid $color-primary-400;
+$form-input-color: $body-color-default;
+$form-input-background-color: $color-neutral-000;
+
+$form-placeholder-font-family: $form-input-font-family;
+$form-placeholder-font-size: $body-font-size;
+$form-placeholder-font-weight: $form-input-font-weight;
+$form-placeholder-color: $color-primary-300;
+
+// SITE NAVIGATION________________________________________________
+
+// _logo / .logo
+$logo-size-default: 15rem;
+$logo-size-header: $logo-size-default;
+$logo-size-footer: $logo-size-default;
+
+$logo-fill-default: $color-primary-300;
+$logo-fill-header: $logo-fill-default;
+$logo-fill-footer: $logo-fill-default;
+
+// _site-navigation / .site-header
+$site-header-padding-block: $padding-block-default;
+
+$site-header-color: $color-text-alternate;
+$site-header-background-color: $body-color-default;
+
+$site-header-gap: $gap-default;
+$site-header-justification: space-between;
+$site-header-alignment: center;
+
+// _site-navigation / .nav
+$navigation-spacing: $gap-default;
+
+$navigation-font-size: $body-font-size;
+$navigation-color: $color-text-interactive-default;
+$navigation-color-hover: $color-text-interactive-hover;
+
+// _site-navigation / .site-footer
+$site-footer-padding-block: $padding-block-default;
+
+$site-footer-color: $color-text-alternate;
+$site-footer-background-color: $body-color-default;
+
+$site-footer-gap: $gap-default;
+$site-footer-justification: space-between;
+$site-footer-alignment: center;

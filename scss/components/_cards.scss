@@ -1,0 +1,39 @@
+@use '../abstracts/' as *;
+
+.card {
+  display: grid;
+
+  font-family: $card-font-family;
+
+  gap: $card-gap;
+  padding: $card-padding;
+  line-height: $card-line-height;
+  border-radius: $card-border-radius;
+
+  &.h1 h1 {
+    @include heading($heading-font-size-1, $heading-color-1);
+  }
+  &.h2 h2 {
+    @include heading($heading-font-size-2, $heading-color-2);
+  }
+  &.h3 h3 {
+    @include heading($heading-font-size-3, $heading-color-3);
+  }
+
+  &[data-type='default'] {
+    color: $card-default-color;
+    background-color: $card-default-background;
+    box-shadow: $card-default-box-shadow;
+  }
+
+  &[data-type='accent'] {
+    h1,
+    h2,
+    h3 {
+      color: $card-accent-color;
+    }
+    color: $card-accent-color;
+    background-color: $card-accent-background;
+    box-shadow: $card-accent-box-shadow;
+  }
+}

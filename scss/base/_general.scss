@@ -1,0 +1,26 @@
+@use '../abstracts' as *;
+
+body {
+  font-family: $body-font-family;
+  font-size: $body-font-size;
+  font-weight: $body-font-weight;
+
+  color: $body-color-default;
+  background-color: $body-background-color;
+  line-height: $body-line-height;
+}
+
+a {
+  color: $link-color;
+  text-decoration: none;
+
+  &:is(:hover, :focus) {
+    color: $link-color-hover;
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

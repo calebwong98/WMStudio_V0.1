@@ -6,8 +6,10 @@ body {
   font-weight: $body-font-weight;
 
   color: $body-color-default;
-  background-color: $body-background-color;
+  background: $body-background-color;
   line-height: $body-line-height;
+
+  overflow: hidden;
 }
 
 a {
@@ -20,7 +22,12 @@ a {
 }
 
 .app {
+  z-index: 9999;
+  // background-color: red;
   display: flex;
   flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
 }

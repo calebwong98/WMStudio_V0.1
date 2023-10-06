@@ -1,0 +1,138 @@
+@use '../abstracts' as *;
+
+.card {
+  width: 280px;
+  height: 440px;
+  transform-style: preserve-3d;
+  transform: perspective(20rem) rotateX(20deg) rotateY(0deg);
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+  user-select: none;
+
+  .front {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #15144e;
+    transform-style: preserve-3d;
+    transform: translateZ(0.1px);
+    position: absolute;
+    padding: 16px;
+    box-sizing: border-box;
+
+    .image {
+      border-radius: 30px;
+      border: 2px solid #63b4d9;
+      height: 250px;
+      position: relative;
+      transform: translateX(9deg);
+      background-image: url('https://martincrownover.com/blog/wp-content/uploads/2009/04/particle-fire-header-ani.gif');
+      background-size: cover;
+
+      img {
+        width: 100%;
+        user-select: none;
+      }
+
+      .level {
+        position: absolute;
+        top: -2px;
+        left: calc(50% - 22.5px);
+        border-radius: 15px;
+        border: 2px solid #63b4d9;
+        border-top: 0;
+        width: 45px;
+        height: 45px;
+        background-color: #15144e;
+        color: #63b4d9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+      }
+    }
+
+    .title {
+      color: #63b4d9;
+      text-align: center;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      font-size: 18px;
+      position: relative;
+
+      &:before {
+        content: '';
+        background: #63b4d9;
+        height: 2px;
+        width: 60px;
+        top: 10px;
+        left: 0;
+        position: absolute;
+      }
+
+      &:after {
+        content: '';
+        background: #63b4d9;
+        height: 2px;
+        width: 60px;
+        top: 10px;
+        right: 0;
+        position: absolute;
+      }
+    }
+
+    .description {
+      color: #63b4d9;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .socials {
+      margin-top: 10px;
+      width: 100%;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      // background-color: red;
+
+      .facebook,
+      .whatsapp {
+        width: 30px;
+      }
+    }
+
+    .email {
+      font-size: 14px;
+
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      color: #63b4d9;
+      text-align: right;
+    }
+  }
+
+  .back {
+    width: 100%;
+    height: 100%;
+    background-color: #15144e;
+    transform-style: preserve-3d;
+    border-radius: 30px;
+    position: absolute;
+    padding: 16px;
+    border: 2px solid #63b4d9;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      transform-origin: center center;
+      transform: scaleX(-1);
+      width: 100%;
+      fill: white;
+    }
+  }
+}

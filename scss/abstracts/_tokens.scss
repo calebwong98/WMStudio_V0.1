@@ -121,6 +121,11 @@ $body-font-weight: $font-weight-default;
 
 $body-color-default: $color-text-default;
 $body-background-color: $color-background-default;
+$body-background-color: radial-gradient(
+  ellipse at bottom,
+  #1b2735 0%,
+  #090a0f 100%
+);
 $body-line-height: 1.5;
 
 // _general / a
